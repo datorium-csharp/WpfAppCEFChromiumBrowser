@@ -23,6 +23,7 @@ namespace WpfAppCEFChromiumBrowser
     public partial class MainWindow : Window
     {
         ChromiumWebBrowser browser;
+        ChromiumWebBrowser browser2;
 
         public MainWindow()
         {
@@ -35,6 +36,15 @@ namespace WpfAppCEFChromiumBrowser
             browser = new ChromiumWebBrowser();
             browser.LoadUrl("https://datorium.eu");
             tabItem1.Content = browser;
+
+            browser2 = new ChromiumWebBrowser();
+            browser2.LoadUrl("https://youtube.com");
+            tabItem2.Content = browser2;
+        }
+
+        private void GoButton_Click(object sender, RoutedEventArgs e)
+        {
+            browser.LoadUrl(AddressBar.Text);
         }
     }
 }
